@@ -7,7 +7,7 @@
 #  \____/\___/|_|\___/ \__,_|_|      |_/
 #
 # Change your PS4 controllers colours!
-# 			      v0.1 RC1
+# 			      v0.1 RC2
 # I know this is bad code but send me a pull and ill merge if you got any idea to make this better
 
 while getopts "d,t,h,o,0,1,c" opt; do
