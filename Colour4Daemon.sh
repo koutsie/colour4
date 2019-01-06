@@ -8,3 +8,21 @@
 #                                                                                           
 # 			                                                                                      v0.1
 # I know this is bad code but send me a pull and ill merge if you got any idea to make this better
+while :
+do
+red=$(find /sys/class/leds* | grep red)
+green=$(find /sys/class/leds* | grep green)
+blue=$(find /sys/class/leds* | grep blue)
+global=$(find /sys/class/leds* | grep global)
+
+controller=$(lsusb | grep "Sony")
+if [ -n "$controller" ]; then
+  echo "Controller is connected"
+	cat "/$HOME/Colour4/red.c4" > "$red"/brightness
+	cat "/$HOME/Colour4/green.c4" > "$green"/brightness
+	cat "/$HOME/Colour4/blue.c4" > "$blue"/brightness
+else
+  echo "Controller is not connected."
+fi
+sleep 0.2
+done
