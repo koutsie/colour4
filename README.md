@@ -23,6 +23,8 @@ Remember: Colour4 **needs** root!
 <br /><br />
 `r - set an RGBA for the leds`
 <br /><br />
+`s - Set the default colour for Colour4Daemon`
+<br /><br />
 `d - Debug mode`
 <br />----<br />
 
