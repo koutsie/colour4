@@ -7,10 +7,10 @@
 #  \____/\___/|_|\___/ \__,_|_|      |_/
 #
 # Change your PS4 controllers colours!
-# 			      v0.1 RC2
+# 			      v0.1 RC3
 # I know this is bad code but send me a pull and ill merge if you got any idea to make this better
 
-while getopts "d,t,h,o,0,1,c" opt; do
+while getopts "d,t,h,o,0,1,c,r" opt; do
       	red=$(find /sys/class/leds* | grep red)
 	green=$(find /sys/class/leds* | grep green)
 	blue=$(find /sys/class/leds* | grep blue)
@@ -77,12 +77,19 @@ while getopts "d,t,h,o,0,1,c" opt; do
 	echo 0 > "$global"/brightness
 	exit 1
       ;;
-
     1)
 	echo 1 > "$global"/brightness
 	exit 1
       ;;
-
+    r)
+	read -p "How much red: " CONDITION;
+	echo "$CONDITION" > "$red"/brightness
+	read -p "How much green: " CONDITION;
+	echo "$CONDITION" > "$green"/brightness
+	read -p "How much blue: " CONDITION;
+	echo "$CONDITION" > "$blue"/brightness
+	exit 1
+      ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
       exit 1
@@ -103,5 +110,6 @@ echo "Help:";
 echo "c - Show the colour list";
 echo "1/0 - Turn on/off the leds"
 echo "d - Debug mode"
+echo "r - set an RGBA for the leds"
 		
 	
