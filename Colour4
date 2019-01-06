@@ -10,7 +10,8 @@
 # 			      v0.1 RC3
 # I know this is bad code but send me a pull and ill merge if you got any idea to make this better
 
-while getopts "d,t,h,o,0,1,c,r" opt; do
+mkdir -p /$HOME/Colour4/
+while getopts "d,t,h,o,0,1,c,r,s" opt; do
       	red=$(find /sys/class/leds* | grep red)
 	green=$(find /sys/class/leds* | grep green)
 	blue=$(find /sys/class/leds* | grep blue)
@@ -90,6 +91,30 @@ while getopts "d,t,h,o,0,1,c,r" opt; do
 	echo "$CONDITION" > "$blue"/brightness
 	exit 1
       ;;
+    s)
+	read -p "How much red: " CONDITION;
+	echo "$CONDITION" > "$red"/brightness
+	echo "$CONDITION" > /tmp/red.c4
+	read -p "How much green: " CONDITION;
+	echo "$CONDITION" > "$green"/brightness
+	echo "$CONDITION" > /tmp/green.c4
+	read -p "How much blue: " CONDITION;
+	echo "$CONDITION" > "$blue"/brightness
+	echo "$CONDITION" > /tmp/blue.c4
+	read -p "Is this the colour you want (yes/no): " CONDITION;
+	if [ "$CONDITION" == "yes" ]; then
+	   clear
+		mv /tmp/red.c4 /$HOME/Colour4/red.c4
+		mv /tmp/green.c4 /$HOME/Colour4/green.c4
+		mv /tmp/blue.c4 /$HOME/Colour4/blue.c4
+	       exit
+	fi
+	if [ "$CONDITION" == "no" ]; then
+	    clear
+	        exit
+	fi
+	exit 1
+      ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
       exit 1
@@ -109,7 +134,8 @@ echo "                                	      ";
 echo "Help:";
 echo "c - Show the colour list";
 echo "1/0 - Turn on/off the leds"
-echo "d - Debug mode"
 echo "r - set an RGBA for the leds"
+echo "s - Set the default colour for Colour4Daemon"
+echo "d - Debug mode"
 		
 	
