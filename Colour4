@@ -11,10 +11,10 @@
 # I know this is bad code but send me a pull and ill merge if you got any idea to make this better
 
 while getopts "d,t,h,o,cl" opt; do
-      	red=$(find /sys/class/leds -name "000*") && echo $red | awk '/red/{print $3}' > /tmp/red.txt
-	green=$(find /sys/class/leds -name "000*") && echo $green | awk '/green/{print $2}' > /tmp/green.txt
-	blue=$(find /sys/class/leds -name "000*") && echo $blue | awk '/blue/{print $4}' > /tmp/blue.txt
-	global=$(find /sys/class/leds -name "000*") && echo $global | awk '/g/{print $1}'> /tmp/global.txt
+      	red=$(find /sys/class/leds* | grep red) && echo $red  > /tmp/red.txt
+	green=$(find /sys/class/leds* | grep green) && echo $green  > /tmp/green.txt
+	blue=$(find /sys/class/leds* | grep blue) && echo $blue > /tmp/blue.txt
+	global=$(find /sys/class/leds* | grep global) && echo $global > /tmp/global.txt
   case $opt in
     d)
 	globalt=$(cat /tmp/global.txt)
