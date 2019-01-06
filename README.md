@@ -9,6 +9,9 @@
 Change your PS4 controllers colours!
 <br /><br />
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/R6R3HDMB)
+- - -
+How to use?
+`chmod +x Colur4.sh` and `sudo ./Colour4.sh -*args*`
 <br /><br />
 Remember: Colour4 **needs** root!
 <br /><br />
