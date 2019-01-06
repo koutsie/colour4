@@ -10,82 +10,79 @@
 # 			      v0.1 RC1
 # I know this is bad code but send me a pull and ill merge if you got any idea to make this better
 
-while getopts "d,t,h,o,cl" opt; do
-      	red=$(find /sys/class/leds* | grep red) && echo $red  > /tmp/red.txt
-	green=$(find /sys/class/leds* | grep green) && echo $green  > /tmp/green.txt
-	blue=$(find /sys/class/leds* | grep blue) && echo $blue > /tmp/blue.txt
-	global=$(find /sys/class/leds* | grep global) && echo $global > /tmp/global.txt
+while getopts "d,t,h,o,0,1,c" opt; do
+      	red=$(find /sys/class/leds* | grep red)
+	green=$(find /sys/class/leds* | grep green)
+	blue=$(find /sys/class/leds* | grep blue)
+	global=$(find /sys/class/leds* | grep global)
   case $opt in
     d)
-	globalt=$(cat /tmp/global.txt)
-	redc=$(cat /tmp/red.txt)
-	greenc=$(cat /tmp/green.txt)
-	bluec=$(cat /tmp/blue.txt)
-	echo "Red is $redc"
-	echo "Green is $greenc"
-	echo "Blue is $bluec"
-	echo "Global is $globalt"
+	echo "Red is $red"
+	echo "Green is $green"
+	echo "Blue is $blue"
+	echo "Global is $global"
 
-	echo 0 > "$globalt"/brightness
+	echo 0 > "$global"/brightness
 	sleep 0.2
-	echo 1 > "$globalt"/brightness
+	echo 1 > "$global"/brightness
 	exit 1
       ;;
     c)
-	redc=$(cat /tmp/red.txt)
-	greenc=$(cat /tmp/green.txt)
-	bluec=$(cat /tmp/blue.txt)
-
 	Red='\033[0;31m'
 	read -p "Color (1(Red) 2(Green) 3(Blue) 4(Orange) 5(Pink)): " CONDITION;
 	Color_Off='\033[0m'
 
 	if [ "$CONDITION" == "1" ]; then
 	    clear
-		echo 255 > "$redc"/brightness
-		echo 0 > "$greenc"/brightness
-		echo 0 > "$bluec"/brightness
+		echo 255 > "$red"/brightness
+		echo 0 > "$green"/brightness
+		echo 0 > "$blue"/brightness
 	        exit
 	fi
 
 	if [ "$CONDITION" == "2" ]; then
 	    clear
-		echo 0 > "$redc"/brightness
-		echo 255 > "$greenc"/brightness
-		echo 0 > "$bluec"/brightness
+		echo 0 > "$red"/brightness
+		echo 255 > "$green"/brightness
+		echo 0 > "$blue"/brightness
 	        exit
 	fi
 
 	if [ "$CONDITION" == "3" ]; then
 	    clear
-		echo 0 > "$redc"/brightness
-		echo 0 > "$greenc"/brightness
-		echo 255 > "$bluec"/brightness
+		echo 0 > "$red"/brightness
+		echo 0 > "$green"/brightness
+		echo 255 > "$blue"/brightness
 	        exit
 	fi
 
 	if [ "$CONDITION" == "4" ]; then
 	    clear
-		echo 255 > "$redc"/brightness
-		echo 165 > "$greenc"/brightness
-		echo 0 > "$bluec"/brightness
+		echo 255 > "$red"/brightness
+		echo 165 > "$green"/brightness
+		echo 0 > "$blue"/brightness
 	        exit
 	fi
 
 	if [ "$CONDITION" == "5" ]; then
 	    clear
-		echo 255 > "$redc"/brightness
-		echo 20 > "$greenc"/brightness
-		echo 147 > "$bluec"/brightness
+		echo 255 > "$red"/brightness
+		echo 20 > "$green"/brightness
+		echo 147 > "$blue"/brightness
 	        exit
 	fi
 
       ;;
-    o)
-	globalt=$(cat /tmp/global.txt)
-	echo 0 > "$globalt"/brightness
+    0)
+	echo 0 > "$global"/brightness
 	exit 1
       ;;
+
+    1)
+	echo 1 > "$global"/brightness
+	exit 1
+      ;;
+
     \?)
       echo "Invalid option: -$OPTARG" >&2
       exit 1
@@ -104,7 +101,7 @@ echo "                                        ";
 echo "                                	      ";
 echo "Help:";
 echo "c - Show the colour list";
-echo "o - Turn off the leds"
+echo "1/0 - Turn on/off the leds"
 echo "d - Debug mode"
-	
+		
 	
