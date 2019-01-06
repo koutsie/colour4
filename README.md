@@ -14,9 +14,9 @@ Remember: Colour4 **needs** root!
 <br /><br />
 `c - Show the colour list`
 <br /><br />
-`o - Turn off the leds`
+`1/0 - Turn off the leds`
 <br /><br />
 `d - Debug mode`
 <br />----<br />
-![Colour4](https://i.imgur.com/CaR1CWZ.png)
+
 Colour4 is still VERY early in development!
