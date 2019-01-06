@@ -13,13 +13,15 @@ Change your PS4 controllers colours!
 <br /><br />
 How to use?
 <br /><br />
-`chmod +x Colur4.sh` and `sudo ./Colour4.sh -*args*`
+`chmod +x Colur4.sh`  and  `sudo ./Colour4.sh -*args*`
 <br /><br />
 Remember: Colour4 **needs** root!
 <br /><br />
 `c - Show the colour list`
 <br /><br />
 `1/0 - Turn off the leds`
+<br /><br />
+`r - set an RGBA for the leds`
 <br /><br />
 `d - Debug mode`
 <br />----<br />
