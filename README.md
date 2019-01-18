@@ -29,3 +29,23 @@ Remember: Colour4 **needs** root!
 <br />----<br />
 
 Colour4 is still VERY early in development!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS: I didn't help. - Multi
