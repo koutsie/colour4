@@ -6,7 +6,7 @@
  \____/\___/|_|\___/ \__,_|_|      |_/
                                       
                                       </pre>
-Change your PS4 controllers colours!
+Change your PS4 controller's colours!
 - - -
 <br /><br />
 [![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/R6R3HDMB)
@@ -15,7 +15,7 @@ How to use?
 <br /><br />
 `chmod +x Colur4.sh`  and  `sudo ./Colour4.sh -*args*`
 <br /><br />
-Remember: Colour4 **needs** root!
+Remember: Colour4 **requires** root!
 <br /><br />
 `c - Show the colour list`
 <br /><br />
