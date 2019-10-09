@@ -11,7 +11,6 @@ note to self: what the fuck is this lmao fix this shit dudeeee
 Change your PS4 controller's colours!
 - - -
 <br /><br />
-[![ko-fi](https://www.ko-fi.com/img/donate_sm.png)](https://ko-fi.com/R6R3HDMB)
 <br /><br />
 How to use?
 <br /><br />
