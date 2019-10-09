@@ -28,5 +28,3 @@ Remember: Colour4 **requires** root!
 <br /><br />
 `d - Debug mode`
 <br />----<br />
-
-Colour4 is still VERY early in development!
