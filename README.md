@@ -1,4 +1,3 @@
-note to self: what the fuck is this lmao fix this shit dudeeee
 
 <pre> _____       _                    ___ 
 /  __ \     | |                  /   |
